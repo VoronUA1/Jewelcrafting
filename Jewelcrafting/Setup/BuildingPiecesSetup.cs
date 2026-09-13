@@ -149,8 +149,8 @@ public static class BuildingPiecesSetup
 		{
 			if (GetComponent<ZNetView>()?.GetZDO() is { } zdo)
 			{
-				GetComponent<StationExtension>().m_maxStationDistance = zdo.GetString("item") == "" ? 0 : stationMaxDistance;
-				transform.Find("_enabled").gameObject.SetActive(zdo.GetString("item") != "");
+				GetComponent<StationExtension>().m_maxStationDistance = zdo.GetInt(ZDOVars.s_item) == 0 ? 0 : stationMaxDistance;
+				transform.Find("_enabled").gameObject.SetActive(zdo.GetInt(ZDOVars.s_item) != 0);
 			}
 		}
 	}
