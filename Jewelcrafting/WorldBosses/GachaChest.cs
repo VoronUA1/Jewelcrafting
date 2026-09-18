@@ -12,8 +12,8 @@ public class GachaChest : Container, Hoverable
 	private new void Awake()
 	{
 		base.Awake();
-		m_nview.Unregister("RequestOpen");
-		m_nview.Register("RequestOpen", new Action<long, long>(GachaOpen));
+		m_nview.Unregister("RPC_RequestOpen");
+		m_nview.Register("RPC_RequestOpen", new Action<long, long>(GachaOpen));
 		m_nview.Register("Jewelcrafting Gacha Chest No Coins", _ => Player.m_localPlayer?.Message(MessageHud.MessageType.Center, "$jc_gacha_chest_locked"));
 	}
 

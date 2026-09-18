@@ -686,7 +686,7 @@ public static class GemStones
 
                         foreach (Piece.Requirement requirement in recipe.m_resources)
                         {
-                            if (!returnNonTeleportable && !requirement.m_resItem.m_itemData.m_shared.m_teleportable)
+                            if (!returnNonTeleportable && !requirement.m_resItem.m_itemData.m_shared.m_teleportable || requirement.m_upgraderResource)
                             {
                                 continue;
                             }

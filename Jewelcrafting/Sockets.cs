@@ -225,6 +225,14 @@ public class Sockets : Socketable
 		}
 		return 0;
 	}
+
+	public override void Upgraded()
+	{
+		if (!Utils.IsSocketableItem(Item))
+		{
+			Info.Remove(this);
+		}
+	}
 }
 
 public interface ItemBag;
